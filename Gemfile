@@ -36,14 +36,11 @@ gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "rspec-rails"
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'pry-rails'
   gem 'selenium-webdriver'
-end
-
-group :test do
-  gem 'rspec-rails'
 end
 
 group :development do

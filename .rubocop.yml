@@ -10,6 +10,7 @@ AllCops:
     - "app/views/**/*"
     - "config.ru"
     - "Rakefile"
+    - "app/channels/application_cable/*"
 
 Lint/EndAlignment:
   EnforcedStyleAlignWith: variable
