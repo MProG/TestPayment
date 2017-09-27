@@ -9,7 +9,7 @@ end
 
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0.6'
 gem 'sqlite3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -27,10 +27,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'simple_form'
 gem 'devise'
 gem 'devise-foundation-views'
 gem 'enumerize'
-gem 'foundation-rails'
+gem 'foundation-rails', '~> 6.2.4'
 gem 'rubocop', require: false
 gem 'slim'
 

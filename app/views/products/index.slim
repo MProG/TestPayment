@@ -1,0 +1,21 @@
+.row
+  h3 = t('product.header.products')
+  table
+    thead
+      tr
+        th = t('product.field.name')
+        th = t('product.field.price')
+        th = t('product.field.description')
+        th
+    tbody
+      - @products.each do |product|
+        tr
+          td = product.name
+          td = product.price
+          td = product.description
+          td 
+            .button-group.small
+              = link_to t('product.action.show'), product, class: 'button'
+              = link_to t('product.action.edit'), edit_product_path(product), class: 'button'
+              = link_to t('product.action.destroy'), product, method: :delete, class: 'button alert'
+  = link_to t('product.action.new'), new_product_path, class: 'button'

@@ -5,9 +5,21 @@ html[lang="en"]
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
       = content_for?(:title) ? yield(:title) : "foundation-rails"
-    = stylesheet_link_tag    "application"
-    = javascript_include_tag "vendor/modernizr"
-    = csrf_meta_tags
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tag
   body
+    .top-bar
+      .top-bar-left
+        ul.dropdown.menu data-dropdown-menu="" 
+          li.menu-text = t('site_name')
+          li = link_to 'Test link', '#'
+      .top-bar-right
+        .menu
+          - if current_user
+            li = link_to t('user.sign_out'), destroy_user_session_path, method: :delete
+          - else
+            li = link_to t('user.sign_in'), user_session_path
+
     = yield
     = javascript_include_tag "application"
