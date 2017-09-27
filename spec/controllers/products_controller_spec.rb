@@ -2,8 +2,8 @@ require "rails_helper"
 
 describe ProductsController do
   let(:user) { User.create(email: "test@gmail.com", password: "12345678") }
-  let(:valid_attributes) { { name: "test_name", price: 3.4 } }
-  let(:invalid_attributes) { { name: nil, price: 3.4 } }
+  let(:valid_attributes) { { name: "test_name", price: 3 } }
+  let(:invalid_attributes) { { name: nil, price: 3 } }
   subject(:product) { Product.create! valid_attributes }
 
   describe "#index" do
