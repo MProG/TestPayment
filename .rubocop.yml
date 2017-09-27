@@ -20,6 +20,10 @@ Lint/Eval:
   Exclude:
     - "spec/**/*"
 
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*"
+
 MethodLength:
   Max: 15
   Exclude:

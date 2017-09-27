@@ -1,0 +1,7 @@
+= simple_form_for @product do |f|
+  = f.input :name
+  = f.input :description, as: :text
+  = f.input :price
+  .button-group
+    = f.button :submit
+    = link_to t('product.action.back'), products_path, class: 'button secondary'

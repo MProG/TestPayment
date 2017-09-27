@@ -1,0 +1,15 @@
+.row
+  h3 = @product.name
+.row
+  .column.medium-6
+    = "#{t('product.field.price')}: #{@product.price}"
+.row
+  .column.medium-6
+    = "#{t('product.field.description')}: #{@product.description}"
+.row
+  .column.medium-6
+    = "#{t('product.field.state')}: #{@product.state}"
+.row
+  .button-group.small
+    = link_to t('product.action.edit'), edit_product_path(@product), class: 'button'
+    = link_to t('product.action.back'), products_path, class: 'button secondary'
