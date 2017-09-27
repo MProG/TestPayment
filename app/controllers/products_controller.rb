@@ -43,6 +43,8 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :state)
+    product_params = params.require(:product).permit(:name, :price, :description)
+    product_params[:price] = product_params[:price].to_f * 100
+    product_params
   end
 end

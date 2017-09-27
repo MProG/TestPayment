@@ -11,7 +11,7 @@
       - @products.each do |product|
         tr
           td = product.name
-          td = product.price
+          td = convert_cents(product.price)
           td = product.description
           td 
             .button-group.small
