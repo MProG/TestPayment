@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'products#index'
-
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'omniauth_callbacks'
+  }
+  
   resources :charges, only: [:new, :create]
   resources :products
 end

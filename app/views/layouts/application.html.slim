@@ -8,6 +8,8 @@ html[lang="en"]
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tag
+    script src="https://js.stripe.com/v2/" type="text/javascript"
+    = Gon::Base.render_data
   body
     .top-bar
       .top-bar-left
@@ -19,7 +21,7 @@ html[lang="en"]
           - if current_user
             li = link_to t('user.sign_out'), destroy_user_session_path, method: :delete
           - else
-            li = link_to t('user.sign_in'), user_session_path
+            li = link_to t('user.sign_in'), user_stripe_connect_omniauth_authorize_path
 
     = yield
     = javascript_include_tag "application"

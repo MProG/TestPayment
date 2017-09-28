@@ -12,11 +12,11 @@ gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0.6'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
-# gem 'therubyracer', platforms: :ruby
 
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
@@ -33,6 +33,8 @@ gem 'rubocop', require: false
 gem 'slim'
 gem 'stripe'
 gem 'dotenv-rails'
+gem 'omniauth-stripe-connect'
+gem 'gon'
 
 group :development, :test do
   gem "rspec-rails"
