@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :auth_user, except: [:index]
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def edit; end
 
   def create
-    @product = Product.new(product_params)
+    @product = Product.new(product_params.merge(user: current_user))
 
     if @product.save
       redirect_to products_path
