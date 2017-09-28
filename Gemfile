@@ -10,7 +10,7 @@ end
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
 gem 'sass-rails', '~> 5.0.6'
-gem 'sqlite3'
+gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'coffee-rails', '~> 4.2'
@@ -29,14 +29,13 @@ gem 'devise'
 gem 'devise-foundation-views'
 gem 'enumerize'
 gem 'foundation-rails', '~> 6.2.4'
-gem 'rubocop', require: false
 gem 'slim'
 gem 'stripe'
-gem 'dotenv-rails'
 gem 'omniauth-stripe-connect'
 gem 'gon'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem "rspec-rails"
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
@@ -45,6 +44,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rubocop', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'

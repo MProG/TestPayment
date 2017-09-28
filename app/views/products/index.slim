@@ -16,6 +16,8 @@
           td 
             .button-group.small
               = link_to t('product.action.show'), product, class: 'button'
-              = link_to t('product.action.edit'), edit_product_path(product), class: 'button'
-              = link_to t('product.action.destroy'), product, method: :delete, class: 'button alert'
-  = link_to t('product.action.new'), new_product_path, class: 'button'
+              - if current_user && current_user == product.user
+                = link_to t('product.action.edit'), edit_product_path(product), class: 'button'
+                = link_to t('product.action.destroy'), product, method: :delete, class: 'button alert'
+  - if current_user && current_user.role.seller?
+    = link_to t('product.action.new'), new_product_path, class: 'button'

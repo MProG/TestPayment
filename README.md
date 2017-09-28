@@ -1,24 +1,15 @@
-# README
+## Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby 2.4.1
+- Postgres 9.x
+- Yarn
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+    bin/setup
 
-* System dependencies
+## Testing
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To run the test suite regularly:
+    
+    bin/rspec

@@ -5,15 +5,6 @@ describe ChargesController do
   let(:product) { double(price: 500) }
   let(:customer) { double(id: 15) }
 
-  describe "#new" do
-    it "returns http success" do
-      sign_in user
-
-      get :new
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe "#create" do
     it "returns http success" do
       sign_in user
