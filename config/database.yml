@@ -16,5 +16,7 @@ test:
   database: revv-challenge-app_test
 
 production:  
-  <<: *default  
+  <<: *default
+  username: root
+  password: 
   url: <%= ENV['DATABASE_URL'] %>
