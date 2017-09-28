@@ -25,6 +25,9 @@ html[lang="en"]
     - if flash[:error]
       .row
         = flash[:error]
+    - if flash[:alert]
+      .row
+        = flash[:alert]
 
     = yield
     = javascript_include_tag "application"

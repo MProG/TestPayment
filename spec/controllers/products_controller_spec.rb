@@ -78,7 +78,7 @@ describe ProductsController do
     end
 
     context "with valid params" do
-      let(:new_attributes) { { name: "Cool new name" } }
+      let(:new_attributes) { { name: "Cool new name", price: 5 } }
 
       it "updates the requested product" do
         put :update, params: { id: product.to_param, product: new_attributes }
