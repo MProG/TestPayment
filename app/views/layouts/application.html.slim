@@ -15,13 +15,16 @@ html[lang="en"]
       .top-bar-left
         ul.dropdown.menu data-dropdown-menu="" 
           li.menu-text = t('site_name')
-          li = link_to 'Test link', '#'
       .top-bar-right
         .menu
           - if current_user
             li = link_to t('user.sign_out'), destroy_user_session_path, method: :delete
           - else
             li = link_to t('user.sign_in'), user_stripe_connect_omniauth_authorize_path
+
+    - if flash[:error]
+      .row
+        = flash[:error]
 
     = yield
     = javascript_include_tag "application"

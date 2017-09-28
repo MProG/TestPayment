@@ -1,23 +1,21 @@
 class ChargesController < ApplicationController
-  before_action :authenticate_user!
+  rescue_from Stripe::CardError, with: :invalid_card
+  before_action :auth_user
 
   def new; end
 
   def create
-    create_charge
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
+    ChargeService.make_charge(current_user, product, params[:stripeToken])
   end
 
   private
 
-  def create_charge
-    customer = StripeTool.create_customer(email: params[:stripeEmail], stripe_token: params[:stripeToken])
-    StripeTool.create_charge(customer_id: customer.id, amount: product.price, description: "Stripe customer")
-  end
-
   def product
     @product ||= Product.find_by(id: params[:product_id], state: :active)
+  end
+
+  def invalid_card(exception)
+    flash[:error] = exception.message
+    redirect_to root_path
   end
 end

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe ProductsController do
   let(:user) { User.create(email: "test@gmail.com", password: "12345678") }
-  let(:valid_attributes) { { name: "test_name", price: 3 } }
+  let(:valid_attributes) { { name: "test_name", price: 3, user: user } }
   let(:invalid_attributes) { { name: nil, price: 3 } }
   subject(:product) { Product.create! valid_attributes }
 
